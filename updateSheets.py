@@ -1,7 +1,8 @@
 import gspread
 import pandas as pd
-import configparser
 from oauth2client.service_account import ServiceAccountCredentials
+import ast
+import os
 import datetime
 
 
@@ -15,13 +16,12 @@ def atualiza_tabela(categoria, quantia):
 
 	# valida credenciais
 	scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-	credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+	# credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+	credentials = gspread.service_account_from_dict(ast.literal_eval(os.environ.get('CREDENTIALS')))
 	client = gspread.authorize(credentials)
 
 	# configurações
-	config = configparser.ConfigParser()
-	config.read_file(open('app.cfg'))
-	gastos = client.open_by_key(config['SHEETS']['TABELA_GASTOS']).sheet1
+	gastos = client.open_by_key(os.environ.get('TABELA_GASTOS')).sheet1
 
 	# adiciona valores
 	novo_gasto = pd.DataFrame(
