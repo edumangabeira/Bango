@@ -3,3 +3,5 @@ __pycache__/
 client_secret.json
 *.flaskenv
 *.cfg
+*.env
+app.db

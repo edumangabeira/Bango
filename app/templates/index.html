@@ -1,8 +1,7 @@
-
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Controle seus gastos pessoais com Bango</h1>
+    <h1>Controle seus gastos pessoais com Bango, mozão!</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
@@ -10,7 +9,7 @@
             {{ form.categoria(size=32) }}
         </p>
         <p>
-            {{ form.quantia.label }}<br>
+            {{ form.quantia.label(autocomplete="off") }}<br>
             {{ form.quantia(size=32) }}
         </p>
         <p>{{ form.salvar() }}</p>
