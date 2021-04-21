@@ -8,7 +8,6 @@ from werkzeug.urls import url_parse
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
-@login_required
 def index():
 	form = GastosForm()
 	if form.validate_on_submit():
