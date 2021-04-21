@@ -1,1 +1,1 @@
-web: bango.py
+web: gunicorn bango:app
