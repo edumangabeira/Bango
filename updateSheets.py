@@ -17,7 +17,20 @@ def atualiza_tabela(categoria, quantia):
 	# valida credenciais
 	scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 	# credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-	credentials = gspread.service_account_from_dict(ast.literal_eval(os.environ.get('CREDENTIALS')))
+	ws_credentials = {
+		"type": os.environ.get('TYPE'),
+	    "project_id": os.environ.get('PROJECT_ID'),
+	    "private_key_id": os.environ.get('PRIVATE_KEY_ID'),
+	    "private_key": os.environ.get('PRIVATE_KEY').replace("\\n", "\n"),
+	    "client_email": os.environ.get("CLIENT_EMAIL"),
+		"client_id": os.environ.get("CLIENT_ID"),
+		"auth_uri": os.environ.get("AUTH_URI"),
+		"token_uri": os.environ.get("TOKEN_URI"),
+		"project_id": os.environ.get("PROJECT_ID"),
+		"auth_provider_x509_cert_url":os.environ.get("AUTH_PROVIDER_CERT_URL"),
+		"client_x509_cert_url":os.environ.get("CLIENT_CERT_URL")
+	}
+	credentials = ServiceAccountCredentials.from_json_keyfile_dict(ws_credentials, scope)
 	client = gspread.authorize(credentials)
 
 	# configurações
