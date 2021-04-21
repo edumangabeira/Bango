@@ -1,1 +1,1 @@
-web: python bango.py
+web: bango.py
