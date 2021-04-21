@@ -1,1 +1,1 @@
-web: gunicorn bango:app
+web: flask db upgrade;  gunicorn bango:app
