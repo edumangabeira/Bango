@@ -1,10 +1,10 @@
 # Bango
 ## Aplicação web para acompanhamento de fluxo de caixa para uso pessoal.
 
-- [Uso](#uso)
-- [O aplicativo web](#o-aplicativo-web)
+- [Instruções de uso](#instruções-de-uso)
+  * [O aplicativo web](#o-aplicativo-web)
   * [Clonando](#clonando)
-  * [Histórico de versões](#histórico-de-versões)
+- [Histórico de versões](#histórico-de-versões)
 - [Configurações](#configurações)
 
 
@@ -16,7 +16,7 @@ Após realizar login, basta inserir um rótulo para o gasto e a quantia associad
 
 #### Clonando
 
-Caso queira clonar o repositório e usar o aplicativo, é preciso seguir alguns passos antes de começar. Bango foi criado com base no [tutorial Flask do Miguel Grinberg](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world), por isso vale a pena checar esse material em caso de problemas.
+Caso queira clonar o repositório e usar o aplicativo, é preciso seguir [alguns passos](#configurações) antes de começar. Bango foi criado com base no [tutorial Flask do Miguel Grinberg](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world), por isso vale a pena checar esse material em caso de problemas.
 
 ### Histórico de versões
 
